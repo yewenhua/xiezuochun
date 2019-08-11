@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout style="@style/ActivityBG">
+
+        <View style="@style/Line_10" />
+
+        <ImageView
+            android:layout_width="@dimen/dp_102"
+            android:layout_height="@dimen/dp_102"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_52"
+            android:background="@drawable/add_success" />
+
+        <TextView
+            style="@style/TitleText"
+            android:layout_marginTop="@dimen/dp_25"
+            android:text="@string/share_device_success"
+            android:textSize="@dimen/sp_18" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_20"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/ItemText"
+                    android:text="@string/share_success_1" />
+
+                <TextView
+                    android:id="@+id/tv_userPhone"
+                    style="@style/ItemText" />
+
+                <TextView
+                    style="@style/ItemText"
+                    android:text="@string/share_success_2" />
+            </LinearLayout>
+            
+            <TextView
+                style="@style/ItemText"
+                android:layout_marginTop="@dimen/dp_4"
+                android:text="@string/share_success_3"/>
+            
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_70"
+            android:layout_marginLeft="@dimen/dp_38"
+            android:layout_marginRight="@dimen/dp_38">
+
+            <Button
+                android:id="@+id/btn_notifyWechat"
+                android:layout_width="match_parent"
+                android:onClick="shareClick"
+                android:layout_height="@dimen/dp_52"
+                android:text="@string/notify_wechat"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/ellipse_bg_selector"/>
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_52"
+                android:onClick="shareClick"
+                android:layout_marginTop="@dimen/dp_15"
+                android:text="@string/cancel_notify"
+                android:textColor="@color/colorDesc"
+                android:background="@drawable/ellipse_bg"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

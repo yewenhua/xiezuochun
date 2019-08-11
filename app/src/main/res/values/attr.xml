@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="XEditText">
+        <attr name="x_separator" format="string"/>
+        <attr name="x_disableClear" format="boolean"/>
+        <attr name="x_clearDrawable" format="reference"/>
+        <attr name="x_showPwdDrawable" format="reference"/>
+        <attr name="x_hidePwdDrawable" format="reference"/>
+        <attr name="x_disableEmoji" format="boolean"/>
+        <attr name="x_togglePwdDrawableEnable" format="boolean"/>
+        <attr name="x_pattern" format="string"/>
+    </declare-styleable>
+
+    <!-- 圆形头像 -->
+    <declare-styleable name="CircleImageView">
+        <attr name="civBorderWidth" format="dimension" />
+        <attr name="civBorderColor" format="color" />
+        <attr name="civBorderOverlay" format="boolean" />
+        <attr name="civFillColor" format="color" />
+    </declare-styleable>
+</resources>

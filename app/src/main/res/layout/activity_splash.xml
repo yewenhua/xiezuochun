@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        style="@style/ActivityBG">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_547"
+            android:background="@mipmap/ad"/>
+
+        <ImageView
+            android:layout_width="@dimen/dp_112"
+            android:layout_height="@dimen/dp_52"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp_57"
+            android:background="@drawable/iv_logo"/>
+
+        <TextView
+            style="@style/ItemText"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp_37"
+            android:textSize="@dimen/sp_12"
+            android:text="@string/company_name"/>
+
+    </RelativeLayout>
+
+</layout>

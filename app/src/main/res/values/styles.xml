@@ -1,0 +1,177 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="bottomSheetAnim" parent="android:Animation" mce_bogus="1">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+
+    <!--背景样式-->
+    <style name="ActivityBG">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@color/colorWhite</item>
+    </style>
+
+    <!--登录界面-->
+    <style name="Login">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_52</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColorHint">@color/colorHint</item>
+        <item name="android:textColor">@color/colorInput</item>
+    </style>
+
+    <!--TextInputLayout错误提示-->
+    <style name="HintError" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorRed</item>
+    </style>
+
+    <!--按钮的样式-->
+    <style name="Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_52</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+    </style>
+
+    <style name="TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!--标题栏文字风格-->
+    <style name="TitleText" parent="TextView">
+        <item name="android:textColor">@color/colorInput</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <!--输入框标题-->
+    <style name="ItemText" parent="TitleText">
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColor">@color/colorDesc</item>
+    </style>
+
+    <!--输入框文字风格-->
+    <style name="EditText" parent="ItemText">
+        <item name="android:textColor">@color/colorInput</item>
+        <item name="android:textColorHint">@color/colorHint</item>
+        <item name="android:layout_marginLeft">@dimen/dp_15</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <!--分割线-->
+    <style name="Line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/px_1</item>
+        <item name="android:background">@color/colorLine</item>
+    </style>
+
+    <!--分割线-->
+    <style name="Line_10">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_10</item>
+        <item name="android:background">@color/colorBg</item>
+    </style>
+
+    <!--栏目风格-->
+    <style name="Item">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/colorWhite</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!--正常栏目高度52-->
+    <style name="Item_52" parent="Item">
+        <item name="android:layout_height">@dimen/dp_52</item>
+    </style>
+
+    <!--正常栏目高度70-->
+    <style name="Item_70" parent="Item">
+        <item name="android:layout_height">@dimen/dp_70</item>
+    </style>
+
+    <!--正常栏目高度78-->
+    <style name="Item_78" parent="Item">
+        <item name="android:layout_height">@dimen/dp_78</item>
+    </style>
+
+    <!--正常栏目高度95-->
+    <style name="Item_95" parent="Item">
+        <item name="android:layout_height">@dimen/dp_95</item>
+    </style>
+
+    <!--向右箭头-->
+    <style name="Arrow_Right">
+        <item name="android:layout_width">@dimen/dp_22</item>
+        <item name="android:layout_height">@dimen/dp_22</item>
+        <item name="android:background">@drawable/iv_right</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="PictureSelector" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <!--标题栏背景色-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--状态栏背景色-->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!--是否改变图片列表界面状态栏字体颜色为黑色-->
+        <item name="picture.statusFontColor">true</item>
+        <!--返回键图标-->
+        <item name="picture.leftBack.icon">@drawable/white_back</item>
+        <!--标题下拉箭头-->
+        <item name="picture.arrow_down.icon">@mipmap/arrow_down</item>
+        <!--标题上拉箭头-->
+        <item name="picture.arrow_up.icon">@mipmap/arrow_up</item>
+        <!--标题文字颜色-->
+        <item name="picture.title.textColor">@color/colorWhite</item>
+        <!--标题栏右边文字-->
+        <item name="picture.right.textColor">@color/colorWhite</item>
+        <!--图片列表勾选样式-->
+        <item name="picture.checked.style">@drawable/rb_selector</item>
+        <!--开启图片列表勾选数字模式,开启的话勾选样式要换-->
+        <item name="picture.style.checkNumMode">false</item>
+        <!--选择图片样式0/9-->
+        <item name="picture.style.numComplete">false</item>
+        <!--图片列表底部背景色-->
+        <item name="picture.bottom.bg">@color/colorBg</item>
+        <!--图片列表预览文字颜色-->
+        <item name="picture.preview.textColor">@drawable/picture_text_color</item>
+        <!--图片列表已完成文字颜色-->
+        <item name="picture.complete.textColor">@drawable/picture_text_color</item>
+        <!--图片已选数量圆点背景色-->
+        <item name="picture.num.style">@drawable/num_oval</item>
+        <!--预览界面标题文字颜色-->
+        <item name="picture.ac_preview.title.textColor">@color/colorWhite</item>
+        <!--预览界面已完成文字颜色-->
+        <item name="picture.ac_preview.complete.textColor">@drawable/picture_text_color</item>
+        <!--预览界面标题栏背景色-->
+        <item name="picture.ac_preview.title.bg">@color/colorPrimary</item>
+        <!--预览界面底部背景色-->
+        <item name="picture.ac_preview.bottom.bg">@color/color_fa</item>
+        <!--预览界面返回箭头-->
+        <item name="picture.preview.leftBack.icon">@drawable/white_back</item>
+        <!--裁剪页面标题背景色-->
+        <item name="picture.crop.toolbar.bg">@color/colorPrimary</item>
+        <!--裁剪页面状态栏颜色-->
+        <item name="picture.crop.status.color">@color/colorPrimaryDark</item>
+        <!--裁剪页面标题文字颜色-->
+        <item name="picture.crop.title.color">@color/white</item>
+        <!--相册文件夹列表选中图标-->
+        <item name="picture.folder_checked_dot">@drawable/num_oval</item>
+    </style>
+
+</resources>

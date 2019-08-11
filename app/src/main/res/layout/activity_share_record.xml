@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        style="@style/ActivityBG"
+        android:background="@color/colorBg">
+
+        <RelativeLayout
+            style="@style/ActivityBG"
+            android:layout_marginTop="@dimen/dp_10"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingRight="@dimen/dp_15">
+
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/srl_shareRecord"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/dp_89">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_record"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+                <com.scwang.smartrefresh.layout.footer.BallPulseFooter
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+            <Button
+                android:id="@+id/btn_clearRecord"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_52"
+                android:layout_marginBottom="@dimen/dp_30"
+                android:layout_alignParentBottom="true"
+                android:textColor="@color/colorRed"
+                android:background="@drawable/btn_red_bg"
+                android:text="@string/clear_record"/>
+
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        style="@style/ActivityBG">
+
+        <View style="@style/Line_10"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                style="@style/ActivityBG"
+                android:paddingLeft="@dimen/dp_15"
+                android:paddingRight="@dimen/dp_15">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_290"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:background="@mipmap/share_key_bg"/>
+
+                <TextView
+                    style="@style/TitleText"
+                    android:text="@string/share_key_desc"/>
+
+                <TextView
+                    style="@style/ItemText"
+                    android:text="@string/share_key_remark"/>
+
+
+                <Button
+                    android:id="@+id/btn_confirmShare"
+                    android:layout_marginTop="@dimen/dp_70"
+                    android:background="@drawable/btn_selector"
+                    android:onClick="shareClick"
+                    android:text="@string/confirm_share"
+                    style="@style/Button"/>
+
+                <Button
+                    android:id="@+id/btn_shareRecord"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:background="@drawable/btn_gary_bg"
+                    android:onClick="shareClick"
+                    android:text="@string/share_key_record"
+                    android:textColor="@color/colorDesc"
+                    style="@style/Button"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>

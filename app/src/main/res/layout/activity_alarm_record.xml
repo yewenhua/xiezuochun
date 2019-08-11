@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        style="@style/ActivityBG">
+
+        <LinearLayout
+            style="@style/Item_52">
+
+            <RelativeLayout
+                android:id="@+id/ll_alarmType"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:onClick="alarmClick"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_alarmType"
+                    style="@style/ItemText"
+                    android:text="@string/alarm_type"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="@dimen/px_1"
+                android:layout_height="match_parent"
+                android:background="@color/colorLine"/>
+
+            <RelativeLayout
+                android:id="@+id/ll_alarmTime"
+                android:layout_width="@dimen/dp_0"
+                android:gravity="center"
+                android:onClick="alarmClick"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_alarmTime"
+                    style="@style/ItemText"
+                    android:text="@string/alarm_time"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <View
+            style="@style/Line"
+            android:layout_height="@dimen/dp_10"
+            android:background="@color/colorBg"/>
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_alarm"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginRight="@dimen/dp_15"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_10"/>
+
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    </LinearLayout>
+
+</layout>

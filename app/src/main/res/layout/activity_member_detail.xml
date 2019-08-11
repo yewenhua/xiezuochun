@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="Util"
+            type="so.voc.vhome.util.Util" />
+
+        <variable
+            name="memberDetailModel"
+            type="so.voc.vhome.model.MemberDetailModel" />
+
+        <variable
+            name="isAdmin"
+            type="boolean" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <RelativeLayout style="@style/ActivityBG">
+
+        <LinearLayout style="@style/ActivityBG">
+
+            <LinearLayout
+                style="@style/Item_78"
+                android:gravity="center_vertical">
+
+                <so.voc.vhome.widget.CircleImageView
+                    android:id="@+id/civ_headIcon"
+                    android:layout_width="@dimen/dp_42"
+                    android:layout_height="@dimen/dp_42"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:src="@drawable/ic_avatar" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:layout_gravity="left"
+                        android:text="@{memberDetailModel.memberMobile}" />
+
+                    <TextView
+                        style="@style/ItemText"
+                        android:layout_gravity="left"
+                        android:text="@{memberDetailModel.memberName}" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View style="@style/Line" />
+
+            <View
+                style="@style/Line"
+                android:layout_height="@dimen/dp_10"
+                android:background="@color/colorBg" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/dp_15"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_15">
+
+                <LinearLayout
+                    android:id="@+id/ll_finger"
+                    style="@style/Item_52"
+                    android:onClick="memberClick">
+
+                    <TextView
+                        style="@style/ItemText"
+                        android:text="@string/fingerprint_relation" />
+
+                    <TextView
+                        style="@style/EditText"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_weight="1"
+                        android:text="@{memberDetailModel.fingers}" />
+
+                    <ImageView
+                        android:id="@+id/iv_finger"
+                        style="@style/Arrow_Right" />
+
+                </LinearLayout>
+
+                <View style="@style/Line" />
+
+                <LinearLayout
+                    android:id="@+id/ll_card"
+                    style="@style/Item_52"
+                    android:onClick="memberClick">
+
+                    <TextView
+                        style="@style/ItemText"
+                        android:text="@string/card_relation" />
+
+                    <TextView
+                        style="@style/EditText"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_weight="1"
+                        android:text="@{memberDetailModel.cards}" />
+
+                    <ImageView
+                        android:id="@+id/iv_cards"
+                        style="@style/Arrow_Right" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View style="@style/Line" />
+
+            <View
+                style="@style/Line_10"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/dp_15"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_15"
+                android:visibility="gone">
+
+                <LinearLayout style="@style/Item_52">
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="@string/view_alarm_record" />
+
+                    <so.voc.vhome.widget.SwitchButton
+                        android:id="@+id/sb_alarmRecord"
+                        android:layout_width="@dimen/dp_52"
+                        android:layout_height="@dimen/dp_28"
+                        android:layout_gravity="center_vertical" />
+
+                </LinearLayout>
+
+                <View style="@style/Line" />
+
+                <LinearLayout style="@style/Item_52">
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="@string/view_open_record" />
+
+                    <so.voc.vhome.widget.SwitchButton
+                        android:id="@+id/sb_openRecord"
+                        android:layout_width="@dimen/dp_52"
+                        android:layout_height="@dimen/dp_28"
+                        android:layout_gravity="center_vertical" />
+
+                </LinearLayout>
+
+                <View style="@style/Line" />
+
+            </LinearLayout>
+
+            <View style="@style/Line_10" />
+
+            <LinearLayout
+                android:id="@+id/ll_shareSetting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/dp_15"
+                android:paddingRight="@dimen/dp_15">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ll_sbOpen"
+                        style="@style/Item_52">
+
+                        <TextView
+                            style="@style/TitleText"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:text="@string/open_lock_time" />
+
+                        <TextView
+                            style="@style/ItemText"
+                            android:layout_marginRight="@dimen/dp_10"
+                            android:textSize="@dimen/sp_16" />
+
+                        <so.voc.vhome.widget.SwitchButton
+                            android:id="@+id/sb_openTime"
+                            android:layout_width="@dimen/dp_52"
+                            android:layout_height="@dimen/dp_28"
+                            android:layout_gravity="center_vertical" />
+
+                    </LinearLayout>
+
+                    <View style="@style/Line" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_openTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ll_startTime"
+                        style="@style/Item_52"
+                        android:onClick="memberClick">
+
+                        <TextView
+                            style="@style/TitleText"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:text="@string/start_time" />
+
+                        <TextView
+                            android:id="@+id/tv_startTime"
+                            style="@style/ItemText"
+                            android:layout_marginRight="@dimen/dp_10"
+                            android:text="@{memberDetailModel.beginDate}"
+                            android:textSize="@dimen/sp_16" />
+
+                        <ImageView
+                            android:id="@+id/iv_startTime"
+                            style="@style/Arrow_Right"/>
+
+                    </LinearLayout>
+
+                    <View style="@style/Line" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_endTime"
+                        style="@style/Item_52"
+                        android:onClick="memberClick">
+
+                        <TextView
+                            style="@style/TitleText"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:text="@string/end_time" />
+
+                        <TextView
+                            android:id="@+id/tv_endTime"
+                            style="@style/ItemText"
+                            android:layout_marginRight="@dimen/dp_10"
+                            android:text="@{memberDetailModel.endDate}"
+                            android:textSize="@dimen/sp_16" />
+
+                        <ImageView
+                            android:id="@+id/iv_endTime"
+                            style="@style/Arrow_Right"/>
+
+                    </LinearLayout>
+
+                    <View style="@style/Line" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_unlockNum"
+                    style="@style/Item_52"
+                    android:onClick="memberClick">
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="@string/num_of_unlocks" />
+
+                    <TextView
+                        android:id="@+id/tv_unlockNum"
+                        style="@style/ItemText"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:text="@{memberDetailModel.maxOpenTimes == null ? @string/no_limit : memberDetailModel.maxOpenTimes}"
+                        android:textSize="@dimen/sp_16" />
+
+                    <ImageView
+                        android:id="@+id/iv_unlockNum"
+                        style="@style/Arrow_Right" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_100"
+            android:layout_marginBottom="@dimen/dp_30"
+            android:layout_marginRight="@dimen/dp_15"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_operate"
+                style="@style/Button"
+                android:background="@drawable/btn_red_bg"
+                android:onClick="memberClick"
+                android:textColor="@color/colorRed" />
+
+            <Button
+                android:id="@+id/btn_save"
+                style="@style/Button"
+                android:layout_marginTop="@dimen/dp_15"
+                android:background="@drawable/btn_selector"
+                android:onClick="memberClick"
+                android:text="@string/save_update"
+                android:visibility="@{isAdmin ? View.GONE : View.VISIBLE}"
+                android:textColor="@color/colorWhite" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

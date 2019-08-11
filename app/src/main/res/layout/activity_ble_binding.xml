@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="bleDevice"
+            type="com.clj.fastble.data.BleDevice"/>
+
+    </data>
+
+    <LinearLayout
+        style="@style/ActivityBG">
+
+        <View style="@style/Line_10"/>
+
+        <RelativeLayout
+            style="@style/ActivityBG"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingRight="@dimen/dp_15">
+
+            <LinearLayout
+                style="@style/ActivityBG">
+
+            <LinearLayout
+                style="@style/Item_52"
+                android:background="@drawable/line_bg">
+
+                <TextView
+                    style="@style/ItemText"
+                    android:textColor="@color/colorInput"
+                    android:text="@string/device_name" />
+
+                <so.voc.vhome.widget.XEditText
+                    android:id="@+id/et_deviceName"
+                    style="@style/EditText"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/Item_52"
+                android:background="@drawable/line_bg">
+
+                <TextView
+                    style="@style/ItemText"
+                    android:textColor="@color/colorInput"
+                    android:text="@string/device_model" />
+
+                <TextView
+                    android:id="@+id/tv_deviceModel"
+                    style="@style/EditText" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/Item_52"
+                android:background="@drawable/line_bg">
+
+                <TextView
+                    style="@style/ItemText"
+                    android:textColor="@color/colorInput"
+                    android:text="@string/device_sn" />
+
+                <TextView
+                    android:id="@+id/tv_deviceSN"
+                    style="@style/EditText" />
+
+            </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_binding"
+                style="@style/Button"
+                android:layout_marginBottom="@dimen/dp_32"
+                android:background="@drawable/btn_selector"
+                android:onClick="bindingClick"
+                android:text="@string/binding_device"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

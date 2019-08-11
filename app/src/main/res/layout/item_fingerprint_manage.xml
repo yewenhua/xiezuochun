@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="fingerModel"
+            type="so.voc.vhome.model.FingerModel" />
+
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+
+        <LinearLayout style="@style/Item_52">
+
+            <LinearLayout
+                android:id="@+id/ll_finger"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TitleText"
+                    android:text="@{@string/finger_no + fingerModel.no}" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_4"
+                    android:orientation="horizontal"
+                    android:visibility="@{fingerModel.alias == null? View.GONE : View.VISIBLE}">
+
+                    <TextView
+                        style="@style/ItemText"
+                        android:text="@string/left_brackets"
+                        android:textSize="@dimen/sp_16" />
+
+                    <TextView
+                        style="@style/ItemText"
+                        android:textSize="@dimen/sp_16"
+                        android:text="@{fingerModel.alias}"/>
+
+                    <TextView
+                        style="@style/ItemText"
+                        android:text="@string/right_brackets"
+                        android:textSize="@dimen/sp_16" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_4"
+                    android:orientation="horizontal"
+                    android:visibility="@{fingerModel.memberName == null? View.GONE : View.VISIBLE}">
+
+                    <TextView
+                        style="@style/ItemText"
+                        android:text="@string/left_brackets"
+                        android:textSize="@dimen/sp_16" />
+
+                    <TextView
+                        style="@style/ItemText"
+                        android:textSize="@dimen/sp_16"
+                        android:text="@{fingerModel.memberName}"/>
+
+                    <TextView
+                        style="@style/ItemText"
+                        android:text="@string/right_brackets"
+                        android:textSize="@dimen/sp_16" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <ImageView style="@style/Arrow_Right" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

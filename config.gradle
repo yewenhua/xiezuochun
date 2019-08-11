@@ -1,0 +1,55 @@
+ext{
+    android = [
+            compileSdkVersion   : 28,
+            buildToolsVersion: "28.0.3",
+            minSdkVersion       : 21,
+            targetSdkVersion    : 28,
+            versionCode         : 1,
+            versionName         : "1.0.0"
+    ]
+
+    version = [
+            supportLibraryVersion   : "28.0.0",
+            smartrefreshVersion     : "1.1.0-alpha-18",
+    ]
+
+    dependencies = [
+            //base
+            "appcompat-v7"                  : "com.android.support:appcompat-v7:${version["supportLibraryVersion"]}",
+            "cardview-v7"                   : "com.android.support:cardview-v7:${version["supportLibraryVersion"]}",
+            "support-v4"                    : "com.android.support:support-v4:${version["supportLibraryVersion"]}",
+            "design"                         : "com.android.support:design:${version["supportLibraryVersion"]}",
+            "constraint-layout"             : "com.android.support.constraint:constraint-layout:1.0.2",
+
+            //ui
+            "SmartRefreshLayout"                :"com.scwang.smartrefresh:SmartRefreshLayout:${version["smartrefreshVersion"]}",
+            "SmartRefreshHeader"                : "com.scwang.smartrefresh:SmartRefreshHeader:${version["smartrefreshVersion"]}",
+            "KProgressHUD"                      : "com.kaopiz:kprogresshud:1.1.0",
+            "Toast"                              : "com.hjq:toast:5.0",
+            "AutoSize"                          : "me.jessyan:autosize:1.1.2",
+            "Glide"                           : "com.github.bumptech.glide:glide:4.8.0",
+            "FlycoTabLayout_Lib"            :"com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar",
+            "imagezoom"                         :"liji.library.dev:imagezoom:1.3.1",
+            //net
+            "gson"                              : "com.google.code.gson:gson:2.8.2",
+            "okGo"                              : "com.lzy.net:okgo:3.0.4",
+
+            //rx
+            "rxjava"                            : "io.reactivex.rxjava2:rxjava:2.1.5",
+            "rxandroid"                         : "io.reactivex.rxjava2:rxandroid:2.1.1",
+
+            "utilcode"                             :"com.blankj:utilcode:1.23.7",
+            "Android-PickerView"                    :"com.contrarywind:Android-PickerView:4.1.8",
+            "material-dialogs"                      :"com.robbypond:material-dialogs:1.0.0",
+
+            "jpush"                                 :"cn.jiguang.sdk:jpush:3.3.1",
+            "jcore"                                 :"cn.jiguang.sdk:jcore:2.0.1",
+            "umeng_analytics"                       :"com.umeng.umsdk:analytics:7.5.4",
+            "umeng_common"                          :"com.umeng.umsdk:common:1.5.4",
+            "picasso"                               :"com.squareup.picasso:picasso:2.5.2",
+            "zxing"                                 :"com.king.zxing:zxing-lite:1.1.1",
+            "PictureSelector"                       :"com.github.LuckSiege.PictureSelector:picture_library:v2.2.3",
+            "FastBle"                               :"com.clj.fastble:FastBleLib:2.3.4",
+            "SwipeRecyclerView"                     :"com.yanzhenjie.recyclerview:support:1.3.2",
+    ]
+}

@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="hasDevice"
+            type="boolean" />
+
+        <variable
+            name="isAdmin"
+            type="boolean"/>
+
+        <variable
+            name="isWeather"
+            type="boolean"/>
+
+        <variable
+            name="hasUnread"
+            type="boolean"/>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="dataBean"
+            type="so.voc.vhome.model.WeatherModel.DataBean" />
+
+    </data>
+
+    <LinearLayout style="@style/ActivityBG">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_160"
+            android:background="@drawable/main_bg"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingRight="@dimen/dp_15">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_52"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_userName"
+                        style="@style/TitleText"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/sp_18" />
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:text="@string/hello"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/sp_18" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:id="@+id/fl_msg"
+                        android:layout_width="@dimen/dp_28"
+                        android:layout_height="@dimen/dp_28"
+                        android:onClick="mainClick"
+                        android:layout_marginRight="@dimen/dp_10">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/iv_msg" />
+
+                        <ImageView
+                            android:id="@+id/iv_unread"
+                            android:layout_width="@dimen/dp_8"
+                            android:layout_height="@dimen/dp_8"
+                            android:layout_gravity="bottom|right"
+                            android:layout_marginBottom="@dimen/dp_5"
+                            android:visibility="@{hasUnread ? View.GONE : View.VISIBLE}"
+                            android:background="@drawable/circle_red" />
+
+                    </FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/iv_setting"
+                        android:layout_width="@dimen/dp_28"
+                        android:layout_height="@dimen/dp_28"
+                        android:onClick="mainClick"
+                        android:background="@drawable/iv_settting" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/TitleText"
+                android:layout_gravity="left"
+                android:text="@string/weather_loading"
+                android:textColor="@color/colorWhite"
+                android:visibility="@{isWeather ? View.GONE : View.VISIBLE}"
+                android:textSize="@dimen/sp_18"/>
+
+            <LinearLayout
+                android:id="@+id/ll_weather"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:visibility="@{isWeather ? View.VISIBLE : View.GONE}"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_weather"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_tem"
+                        android:layout_gravity="left"
+                        android:textColor="@color/colorWhite"
+                        style="@style/TitleText"
+                        android:textSize="@dimen/sp_30" />
+
+                    <TextView
+                        android:id="@+id/tv_wea"
+                        style="@style/TitleText"
+                        android:textColor="@color/colorWhite"
+                        android:layout_gravity="left"
+                        android:textSize="@dimen/sp_14" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_deviceList"
+            android:layout_width="@dimen/dp_62"
+            android:layout_height="@dimen/dp_28"
+            android:layout_gravity="right"
+            android:onClick="mainClick"
+            android:background="@drawable/device_list_bg"
+            android:layout_marginRight="@dimen/dp_30"
+            android:gravity="center"
+            android:layout_marginTop="-21.4dp">
+            
+            <ImageView
+                android:layout_width="@dimen/dp_28"
+                android:layout_height="@dimen/dp_28"
+                android:background="@drawable/iv_device_list"/>
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_89"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="@{hasDevice ? View.GONE : View.VISIBLE}">
+
+            <ImageView
+                android:layout_width="@dimen/dp_275"
+                android:layout_height="@dimen/dp_128"
+                android:background="@mipmap/no_device" />
+
+            <TextView
+                style="@style/ItemText"
+                android:layout_marginTop="@dimen/dp_18"
+                android:text="@string/no_device" />
+
+            <Button
+                android:id="@+id/btn_addDevice"
+                android:layout_width="@dimen/dp_228"
+                android:layout_height="@dimen/dp_48"
+                android:layout_marginTop="@dimen/dp_128"
+                android:onClick="mainClick"
+                android:background="@drawable/btn_bg"
+                android:text="@string/add_device"
+                android:textColor="@color/colorAccent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_20"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="@{hasDevice ? View.VISIBLE : View.GONE}">
+            
+            <FrameLayout
+                android:layout_width="@dimen/dp_222"
+                android:layout_height="@dimen/dp_222">
+
+                <so.voc.vhome.widget.RippleView
+                    android:id="@+id/rv_ripple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_keyBg"
+                    android:layout_width="@dimen/dp_168"
+                    android:layout_height="@dimen/dp_168"
+                    android:onClick="mainClick"
+                    android:background="@mipmap/unconnect_bg"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:id="@+id/iv_lock"
+                        android:layout_width="@dimen/dp_58"
+                        android:layout_height="@dimen/dp_58"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/iv_lock_core"/>
+
+                </RelativeLayout>
+
+            </FrameLayout>
+            
+            <LinearLayout
+                android:id="@+id/ll_lockName"
+                android:layout_width="@dimen/dp_198"
+                android:layout_height="@dimen/dp_37"
+                android:layout_marginTop="@dimen/dp_15"
+                android:onClick="mainClick"
+                android:background="@drawable/lock_bg">
+                
+                <TextView
+                    android:id="@+id/tv_lockName"
+                    android:singleLine="true"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    style="@style/TitleText"/>
+
+                <ImageView
+                    style="@style/Arrow_Right"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:gravity="right"/>
+                
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/Item_52"
+                android:layout_marginTop="@dimen/dp_48">
+
+                <LinearLayout
+                    android:id="@+id/ll_openRecord"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="mainClick"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    
+                    <ImageView
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_30"
+                        android:background="@drawable/iv_open_record"/>
+
+                    <TextView
+                        style="@style/ItemText"
+                        android:text="@string/open_record"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_alarmRecord"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="mainClick"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_34"
+                        android:background="@drawable/iv_alarm_record"/>
+
+                    <TextView
+                        style="@style/ItemText"
+                        android:text="@string/alarm_record"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_memberManage"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_weight="1"
+                    android:onClick="mainClick"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_34"
+                        android:background="@drawable/iv_member_manage"/>
+
+                    <TextView
+                        style="@style/ItemText"
+                        android:text="@string/member_manager"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/Item_52"
+                android:layout_marginTop="@dimen/dp_20"
+                android:visibility="@{isAdmin ? View.VISIBLE : View.GONE}">
+
+                <LinearLayout
+                    android:id="@+id/ll_shareKey"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="mainClick"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_30"
+                        android:background="@drawable/iv_share_key"/>
+
+                    <TextView
+                        style="@style/ItemText"
+                        android:text="@string/share_key"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_shareDevice"
+                    android:layout_width="@dimen/dp_0"
+                    android:onClick="mainClick"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_34"
+                        android:background="@drawable/iv_share_device"/>
+
+                    <TextView
+                        style="@style/ItemText"
+                        android:text="@string/share_device"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_deviceSetting"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_weight="1"
+                    android:onClick="mainClick"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_34"
+                        android:background="@drawable/iv_device_setting"/>
+
+                    <TextView
+                        style="@style/ItemText"
+                        android:text="@string/device_setting"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,111 @@
+apply plugin: 'com.android.application'
+apply plugin: 'io.objectbox' // apply last
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    defaultConfig {
+        applicationId "so.voc.vhome"
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+
+        signingConfigs {
+            release {
+                storeFile file("android.keystore")
+                storePassword 'yhd,2017'
+                keyAlias 'android.keystore'
+                keyPassword 'yhd,2017'
+            }
+
+            debug {
+                storeFile file("android.keystore")
+                storePassword 'yhd,2017'
+                keyAlias 'android.keystore'
+                keyPassword 'yhd,2017'
+            }
+        }
+
+        ndk {
+            //选择要添加的对应 cpu 类型的 .so 库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "fe0177dbee4d799d1e31d536", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                //这里修改apk文件名
+                def fileName = "VHome_${defaultConfig.versionName}.apk"
+                outputFileName = fileName
+            }
+        }
+    }
+}
+
+dependencies {
+    //base
+    implementation rootProject.ext.dependencies["appcompat-v7"]
+    implementation rootProject.ext.dependencies["cardview-v7"]
+    implementation rootProject.ext.dependencies["design"]
+    implementation rootProject.ext.dependencies["constraint-layout"]
+    //ui
+    implementation rootProject.ext.dependencies["SmartRefreshLayout"]
+    implementation rootProject.ext.dependencies["SmartRefreshHeader"]
+    implementation rootProject.ext.dependencies["KProgressHUD"]
+    implementation rootProject.ext.dependencies["Toast"]
+    implementation rootProject.ext.dependencies["AutoSize"]
+    implementation rootProject.ext.dependencies["Glide"]
+    annotationProcessor rootProject.ext.dependencies["Glide"]
+    implementation rootProject.ext.dependencies["FlycoTabLayout_Lib"]
+    implementation rootProject.ext.dependencies["imagezoom"]
+    //net
+    implementation rootProject.ext.dependencies["gson"]
+    implementation rootProject.ext.dependencies["okGo"]
+    //rx
+    implementation rootProject.ext.dependencies["rxjava"]
+    implementation rootProject.ext.dependencies["rxandroid"]
+    implementation rootProject.ext.dependencies["utilcode"]
+    implementation rootProject.ext.dependencies["Android-PickerView"]
+    implementation rootProject.ext.dependencies["material-dialogs"]
+    implementation rootProject.ext.dependencies["jpush"]
+    implementation rootProject.ext.dependencies["jcore"]
+    implementation 'com.amap.api:location:latest.integration'
+    implementation rootProject.ext.dependencies["umeng_analytics"]
+    implementation rootProject.ext.dependencies["umeng_common"]
+    implementation files('libs/umeng-share-wechat-simplify-6.9.4.jar')
+    implementation files('libs/umeng-share-core-6.9.4.jar')
+    implementation files('libs/umeng-sharetool-6.9.4.jar')
+    implementation rootProject.ext.dependencies["picasso"]
+    implementation rootProject.ext.dependencies["zxing"]
+    implementation rootProject.ext.dependencies["PictureSelector"]
+    implementation rootProject.ext.dependencies["FastBle"]
+    implementation rootProject.ext.dependencies["SwipeRecyclerView"]
+    implementation 'bouncycastle:bcprov-jdk16:140'
+}

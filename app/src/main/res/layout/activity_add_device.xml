@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        style="@style/ActivityBG"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingRight="@dimen/dp_15">
+
+        <LinearLayout
+            android:id="@+id/ll_addScan"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@color/colorBtn"
+            android:onClick="addDeviceClick"
+            android:layout_marginTop="@dimen/dp_37"
+            android:layout_height="@dimen/dp_138">
+
+            <TextView
+                style="@style/TitleText"
+                android:textSize="@dimen/sp_20"
+                android:text="@string/add_by_scan"/>
+
+            <TextView
+                style="@style/ItemText"
+                android:textSize="@dimen/sp_16"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="@string/add_by_scan_desc"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_addManual"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/dp_15"
+            android:onClick="addDeviceClick"
+            android:background="@color/colorBtn"
+            android:layout_height="@dimen/dp_138">
+
+            <TextView
+                style="@style/TitleText"
+                android:textSize="@dimen/sp_20"
+                android:text="@string/add_by_manual"/>
+
+            <TextView
+                style="@style/ItemText"
+                android:textSize="@dimen/sp_16"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="@string/add_by_manual_desc"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

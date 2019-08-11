@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="isLimit"
+            type="boolean" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <RelativeLayout style="@style/ActivityBG">
+
+        <LinearLayout style="@style/ActivityBG">
+
+            <View style="@style/Line_10" />
+
+            <LinearLayout
+                style="@style/ActivityBG"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp_15"
+                android:paddingRight="@dimen/dp_15">
+
+                <LinearLayout
+                    style="@style/Item_52"
+                    android:layout_marginTop="@dimen/dp_10">
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="@string/share_user" />
+
+                    <TextView
+                        android:id="@+id/tv_shareUser"
+                        style="@style/ItemText"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:textSize="@dimen/sp_16" />
+
+                </LinearLayout>
+
+                <View style="@style/Line" />
+
+                <LinearLayout style="@style/Item_52">
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="@string/open_lock_time" />
+
+                    <TextView
+                        style="@style/ItemText"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:text="@{isLimit ? @string/limit : @string/no_limit}"
+                        android:textSize="@dimen/sp_16" />
+
+                    <so.voc.vhome.widget.SwitchButton
+                        android:id="@+id/sb_openTime"
+                        android:layout_width="@dimen/dp_52"
+                        android:layout_height="@dimen/dp_28"
+                        android:layout_gravity="center_vertical" />
+
+                </LinearLayout>
+
+                <View style="@style/Line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{isLimit ? View.VISIBLE : View.GONE}">
+
+                    <LinearLayout
+                        android:id="@+id/ll_startTime"
+                        style="@style/Item_52"
+                        android:onClick="settingClick">
+
+                        <TextView
+                            style="@style/TitleText"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:text="@string/start_time" />
+
+                        <TextView
+                            android:id="@+id/tv_startTime"
+                            style="@style/ItemText"
+                            android:layout_marginRight="@dimen/dp_10"
+                            android:textSize="@dimen/sp_16" />
+
+                        <ImageView style="@style/Arrow_Right" />
+
+                    </LinearLayout>
+
+                    <View style="@style/Line" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_endTime"
+                        style="@style/Item_52"
+                        android:onClick="settingClick">
+
+                        <TextView
+                            style="@style/TitleText"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:text="@string/end_time" />
+
+                        <TextView
+                            android:id="@+id/tv_endTime"
+                            style="@style/ItemText"
+                            android:layout_marginRight="@dimen/dp_10"
+                            android:textSize="@dimen/sp_16" />
+
+                        <ImageView style="@style/Arrow_Right" />
+
+                    </LinearLayout>
+
+                    <View style="@style/Line" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_unlockNum"
+                    style="@style/Item_52"
+                    android:onClick="settingClick">
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="@string/num_of_unlocks" />
+
+                    <TextView
+                        android:id="@+id/tv_unlockNum"
+                        style="@style/ItemText"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:text="@string/no_limit"
+                        android:textSize="@dimen/sp_16" />
+
+                    <ImageView style="@style/Arrow_Right" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View style="@style/Line_10"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                style="@style/ActivityBG"
+                android:layout_marginTop="@dimen/dp_10"
+                android:paddingLeft="@dimen/dp_15"
+                android:paddingRight="@dimen/dp_15"
+                android:visibility="gone">
+
+                <LinearLayout style="@style/Item_52">
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="@string/view_open_record" />
+
+                    <so.voc.vhome.widget.SwitchButton
+                        android:id="@+id/sb_viewOpenRecord"
+                        android:layout_width="@dimen/dp_52"
+                        android:layout_height="@dimen/dp_28"
+                        android:layout_gravity="center_vertical" />
+
+                </LinearLayout>
+
+                <View style="@style/Line" />
+
+                <LinearLayout style="@style/Item_52">
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="@string/view_alarm_record" />
+
+                    <so.voc.vhome.widget.SwitchButton
+                        android:id="@+id/sb_viewAlarmRecord"
+                        android:layout_width="@dimen/dp_52"
+                        android:layout_height="@dimen/dp_28"
+                        android:layout_gravity="center_vertical" />
+
+                </LinearLayout>
+
+                <View style="@style/Line" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_confirmShare"
+            style="@style/Button"
+            android:onClick="settingClick"
+            android:layout_marginBottom="@dimen/dp_30"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_alignParentBottom="true"
+            android:text="@string/confirm_share"
+            android:background="@drawable/btn_selector" />
+
+    </RelativeLayout>
+
+</layout>

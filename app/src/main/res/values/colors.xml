@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0585FF</color>
+    <color name="colorPrimaryDark">#01436E</color>
+    <color name="colorAccent">#0585FF</color>
+
+    <color name="colorBlack46">#46000000</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorRed">#FF4400</color>
+    <!-- Line -->
+    <color name="colorLine">#EBEBEB</color>
+    <color name="colorRecyclerLine">#39000000</color>
+
+    <color name="colorInput">#282828</color>
+    <color name="colorHint">#2E282828</color>
+    <color name="colorDesc">#909090</color>
+    <color name="colorAuxiliary">#617AFF</color>
+
+    <color name="colorBg">#77E3E3E3</color>
+    <color name="colorBtn">#F5F6FB</color>
+    <color name="colorMain">#386EFF</color>
+</resources>

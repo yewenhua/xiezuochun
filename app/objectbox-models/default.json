@@ -1,0 +1,64 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:7107319264850640032",
+      "lastPropertyId": "10:6903965513233092503",
+      "name": "FingerModel",
+      "properties": [
+        {
+          "id": "1:1435815453749262644",
+          "name": "no"
+        },
+        {
+          "id": "3:5284286429125784439",
+          "name": "deviceWhiteListType"
+        },
+        {
+          "id": "4:1037223174942717533",
+          "name": "deviceWhiteListTypeName"
+        },
+        {
+          "id": "5:2407054564867230678",
+          "name": "deviceWhiteListLevel"
+        },
+        {
+          "id": "6:7555331837449133788",
+          "name": "deviceWhiteListLevelName"
+        },
+        {
+          "id": "7:7739872917720367318",
+          "name": "id"
+        },
+        {
+          "id": "8:5331808121372116257",
+          "name": "memberId"
+        },
+        {
+          "id": "9:7559787586822438623",
+          "name": "alias"
+        },
+        {
+          "id": "10:6903965513233092503",
+          "name": "memberName"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "1:7107319264850640032",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 4,
+  "modelVersionParserMinimum": 4,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    7702244155178684075
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}

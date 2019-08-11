@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="isScan"
+            type="boolean"/>
+    </data>
+
+    <LinearLayout style="@style/ActivityBG">
+
+        <View style="@style/Line_10" />
+
+        <RelativeLayout
+            style="@style/ActivityBG"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingRight="@dimen/dp_15">
+
+            <ListView
+                android:id="@+id/lv_ble"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_89"
+                android:divider="@color/colorLine"
+                android:dividerHeight="@dimen/px_1"
+                android:listSelector="@android:color/transparent"
+                android:scrollbars="none" />
+
+            <Button
+                android:id="@+id/btn_search"
+                style="@style/Button"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/dp_32"
+                android:background="@drawable/btn_selector"
+                android:onClick="bleClick"
+                android:text="@{isScan ? @string/stop_search : @string/search_device}"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

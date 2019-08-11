@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        style="@style/ActivityBG">
+
+        <View style="@style/Line_10"/>
+
+        <LinearLayout
+            style="@style/Item_52"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/line_bg">
+
+
+            <so.voc.vhome.widget.XEditText
+                android:id="@+id/et_edit"
+                style="@style/EditText"
+                android:maxLength="15"
+                android:layout_marginRight="@dimen/dp_15"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_submit"
+            style="@style/Button"
+            android:onClick="click"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_26"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp_30"
+            android:text="@string/submit"
+            android:background="@drawable/btn_selector"/>
+
+    </RelativeLayout>
+
+</layout>

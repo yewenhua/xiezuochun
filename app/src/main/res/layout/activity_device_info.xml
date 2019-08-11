@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="isAdmin"
+            type="boolean"/>
+
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout style="@style/ActivityBG">
+
+        <View style="@style/Line_10" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    style="@style/ActivityBG"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:paddingLeft="@dimen/dp_15"
+                    android:paddingRight="@dimen/dp_15">
+
+                    <LinearLayout
+                        android:id="@+id/ll_lockName"
+                        style="@style/Item_52"
+                        android:clickable="@{isAdmin ? true : false}"
+                        android:onClick="infoClick">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_24"
+                            android:layout_height="@dimen/dp_24"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/iv_lock_name" />
+
+                        <TextView
+                            style="@style/TitleText"
+                            android:layout_marginLeft="@dimen/dp_8"
+                            android:text="@string/info_lock_name" />
+
+                        <TextView
+                            android:id="@+id/tv_lockName"
+                            style="@style/ItemText"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:gravity="left"
+                            android:layout_weight="1"
+                            android:singleLine="true"
+                            android:textSize="@dimen/sp_16" />
+
+                        <ImageView style="@style/Arrow_Right"
+                            android:visibility="@{isAdmin ? View.VISIBLE : View.GONE}"/>
+
+                    </LinearLayout>
+
+                    <View style="@style/Line" />
+
+                    <LinearLayout style="@style/Item_52">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_24"
+                            android:layout_height="@dimen/dp_24"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/iv_device_sn" />
+
+                        <TextView
+                            style="@style/TitleText"
+                            android:layout_marginLeft="@dimen/dp_8"
+                            android:text="@string/info_lock_sn" />
+
+                        <TextView
+                            style="@style/ItemText"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:singleLine="true"
+                            android:textSize="@dimen/sp_16" />
+
+                    </LinearLayout>
+
+                    <View style="@style/Line" />
+
+                    <LinearLayout style="@style/Item_52">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_24"
+                            android:layout_height="@dimen/dp_24"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/iv_device_model" />
+
+                        <TextView
+                            style="@style/TitleText"
+                            android:layout_marginLeft="@dimen/dp_8"
+                            android:text="@string/info_lock_model" />
+
+                        <TextView
+                            style="@style/ItemText"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:gravity="left"
+                            android:layout_weight="1"
+                            android:singleLine="true"
+                            android:textSize="@dimen/sp_16" />
+
+                    </LinearLayout>
+
+                    <View style="@style/Line" />
+
+                </LinearLayout>
+
+                <View style="@style/Line_10" />
+
+                <LinearLayout
+                    style="@style/ActivityBG"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dp_15"
+                    android:paddingRight="@dimen/dp_15">
+
+                    <LinearLayout style="@style/Item_52">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_24"
+                            android:layout_height="@dimen/dp_24"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/iv_soft_version" />
+
+                        <TextView
+                            style="@style/TitleText"
+                            android:layout_marginLeft="@dimen/dp_8"
+                            android:text="@string/info_soft_version" />
+
+                        <TextView
+                            style="@style/ItemText"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:singleLine="true"
+                            android:textSize="@dimen/sp_16" />
+
+                    </LinearLayout>
+
+                    <View style="@style/Line" />
+
+                    <LinearLayout style="@style/Item_52">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_24"
+                            android:layout_height="@dimen/dp_24"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/iv_hardware_version" />
+
+                        <TextView
+                            style="@style/TitleText"
+                            android:layout_marginLeft="@dimen/dp_8"
+                            android:text="@string/info_hardware_version" />
+
+                        <TextView
+                            style="@style/ItemText"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:singleLine="true"
+                            android:textSize="@dimen/sp_16" />
+
+                    </LinearLayout>
+
+                    <View style="@style/Line" />
+
+                    <LinearLayout style="@style/Item_52">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_24"
+                            android:layout_height="@dimen/dp_24"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/iv_register_date" />
+
+                        <TextView
+                            style="@style/TitleText"
+                            android:layout_marginLeft="@dimen/dp_8"
+                            android:text="@string/info_register_date" />
+
+                        <TextView
+                            style="@style/ItemText"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:singleLine="true"
+                            android:textSize="@dimen/sp_16" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View style="@style/Line_10" />
+
+                <LinearLayout
+                    style="@style/ActivityBG"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dp_15"
+                    android:paddingRight="@dimen/dp_15">
+
+                    <LinearLayout style="@style/Item_52">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_24"
+                            android:layout_height="@dimen/dp_24"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/iv_fingerprint" />
+
+                        <TextView
+                            style="@style/TitleText"
+                            android:layout_marginLeft="@dimen/dp_8"
+                            android:text="@string/info_admin_fingerprint" />
+
+                        <TextView
+                            style="@style/ItemText"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:layout_weight="1"
+                            android:singleLine="true"
+                            android:gravity="left"
+                            android:textSize="@dimen/sp_16" />
+
+                    </LinearLayout>
+
+                    <View style="@style/Line" />
+
+                    <LinearLayout style="@style/Item_52">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_24"
+                            android:layout_height="@dimen/dp_24"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/iv_fingerprint" />
+
+                        <TextView
+                            style="@style/TitleText"
+                            android:layout_marginLeft="@dimen/dp_8"
+                            android:text="@string/info_master_fingerprint" />
+
+                        <TextView
+                            style="@style/ItemText"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:singleLine="true"
+                            android:textSize="@dimen/sp_16" />
+
+                    </LinearLayout>
+
+                    <View style="@style/Line" />
+
+                    <LinearLayout style="@style/Item_52">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_24"
+                            android:layout_height="@dimen/dp_24"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/iv_fingerprint" />
+
+                        <TextView
+                            style="@style/TitleText"
+                            android:layout_marginLeft="@dimen/dp_8"
+                            android:text="@string/info_guest_fingerprint" />
+
+                        <TextView
+                            style="@style/ItemText"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:singleLine="true"
+                            android:textSize="@dimen/sp_16" />
+
+                    </LinearLayout>
+
+                    <View style="@style/Line" />
+
+                    <LinearLayout style="@style/Item_52">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_24"
+                            android:layout_height="@dimen/dp_24"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/iv_card" />
+
+                        <TextView
+                            style="@style/TitleText"
+                            android:layout_marginLeft="@dimen/dp_8"
+                            android:text="@string/info_admin_card" />
+
+                        <TextView
+                            style="@style/ItemText"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:singleLine="true"
+                            android:textSize="@dimen/sp_16" />
+
+                    </LinearLayout>
+
+                    <View style="@style/Line" />
+
+                    <LinearLayout style="@style/Item_52">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_24"
+                            android:layout_height="@dimen/dp_24"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/iv_card" />
+
+                        <TextView
+                            style="@style/TitleText"
+                            android:layout_marginLeft="@dimen/dp_8"
+                            android:gravity="left"
+                            android:text="@string/info_master_card" />
+
+                        <TextView
+                            style="@style/ItemText"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:singleLine="true"
+                            android:textSize="@dimen/sp_16" />
+
+                    </LinearLayout>
+
+                    <View style="@style/Line" />
+
+                    <LinearLayout style="@style/Item_52">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_24"
+                            android:layout_height="@dimen/dp_24"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/iv_card" />
+
+                        <TextView
+                            style="@style/TitleText"
+                            android:layout_marginLeft="@dimen/dp_8"
+                            android:text="@string/info_guest_card" />
+
+                        <TextView
+                            style="@style/ItemText"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:gravity="left"
+                            android:layout_weight="1"
+                            android:singleLine="true"
+                            android:textSize="@dimen/sp_16" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+</layout>

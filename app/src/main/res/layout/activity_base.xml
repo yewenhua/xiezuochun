@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout style="@style/ActivityBG">
+
+        <LinearLayout
+            android:id="@+id/ll_root"
+            style="@style/ActivityBG">
+
+            <LinearLayout
+                android:id="@+id/ll_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_48">
+
+                    <LinearLayout
+                        android:id="@+id/ll_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_back"
+                            android:layout_width="@dimen/dp_20"
+                            android:layout_height="@dimen/dp_20"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:background="@drawable/iv_back" />
+
+                        <TextView
+                            android:id="@+id/tv_title"
+                            style="@style/TitleText"
+                            android:layout_alignLeft="@id/iv_back"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/dp_5" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/iv_deal"
+                        android:layout_width="@dimen/dp_25"
+                        android:layout_height="@dimen/dp_25"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv_deal"
+                        style="@style/ItemText"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite">
+
+                <LinearLayout
+                    android:id="@+id/ll_load"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp_160"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/iv_load"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_160"
+                        android:background="@mipmap/ic_no_data"/>
+
+                    <TextView
+                        android:id="@+id/tv_load"
+                        style="@style/ItemText"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_offLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_160"
+                        android:background="@drawable/iv_off_line"/>
+
+                    <TextView
+                        style="@style/ItemText"
+                        android:text="@string/off_line"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</layout>

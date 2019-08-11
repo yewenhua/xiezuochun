@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout style="@style/ActivityBG">
+
+        <RelativeLayout
+            android:id="@+id/rl_firstStep"
+            style="@style/ActivityBG"
+            android:visibility="visible">
+
+            <View style="@style/Line_10" />
+
+            <Button
+                android:id="@+id/btn_addFingerprint"
+                style="@style/Button"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginRight="@dimen/dp_15"
+                android:layout_marginBottom="@dimen/dp_30"
+                android:background="@drawable/btn_selector"
+                android:onClick="addFingerClick"
+                android:text="@string/start_add" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_secondStep"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:gravity="center_horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_30"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:text="@string/place_fingers"
+                        android:textSize="@dimen/sp_24" />
+
+                    <TextView
+                        style="@style/ItemText"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:text="@string/add_fingerprint_desc" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/iv_fingerprint"
+                    android:layout_width="@dimen/dp_102"
+                    android:layout_height="@dimen/dp_120"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dp_78" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dp_170">
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:text="@string/been_entered" />
+
+                    <TextView
+                        android:id="@+id/tv_num"
+                        style="@style/TitleText"
+                        android:text="1" />
+
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:text="@string/four_times" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_addComplete"
+                style="@style/Button"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginRight="@dimen/dp_15"
+                android:layout_marginBottom="@dimen/dp_30"
+                android:background="@drawable/btn_selector"
+                android:onClick="addFingerClick"
+                android:visibility="gone"
+                android:text="@string/add_complete" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>

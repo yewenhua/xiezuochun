@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        style="@style/ActivityBG">
+
+        <View
+            style="@style/Line"
+            android:layout_height="@dimen/dp_10"
+            android:background="@color/colorBg"/>
+
+        <LinearLayout
+            style="@style/ActivityBG"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingRight="@dimen/dp_15">
+
+            <LinearLayout
+                style="@style/Item_52"
+                android:background="@drawable/line_bg">
+
+                <TextView
+                    style="@style/ItemText"
+                    android:textColor="@color/colorInput"
+                    android:text="@string/original_pwd" />
+
+                <so.voc.vhome.widget.XEditText
+                    android:id="@+id/et_originalPwd"
+                    style="@style/EditText"
+                    android:hint="@string/input_original_pwd"
+                    android:inputType="textPassword" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/Item_52"
+                android:background="@drawable/line_bg">
+
+                <TextView
+                    style="@style/ItemText"
+                    android:textColor="@color/colorInput"
+                    android:text="@string/login_pwd" />
+
+                <so.voc.vhome.widget.XEditText
+                    android:id="@+id/et_pwd"
+                    style="@style/EditText"
+                    android:hint="@string/input_new_pwd"
+                    android:inputType="textPassword" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/Item_52"
+                android:background="@drawable/line_bg">
+
+                <TextView
+                    style="@style/ItemText"
+                    android:textColor="@color/colorInput"
+                    android:text="@string/login_pwd" />
+
+                <so.voc.vhome.widget.XEditText
+                    android:id="@+id/et_confirmPwd"
+                    style="@style/EditText"
+                    android:hint="@string/input_confirm_pwd"
+                    android:inputType="textPassword" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_modify"
+                style="@style/Button"
+                android:onClick="modifyClick"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="@string/modify"
+                android:background="@drawable/btn_selector"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

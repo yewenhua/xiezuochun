@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        style="@style/ActivityBG">
+
+        <LinearLayout
+            android:id="@+id/ll_headIcon"
+            style="@style/Item_78"
+            android:gravity="center_vertical"
+            android:paddingRight="@dimen/dp_15"
+            android:onClick="userClick"
+            android:paddingLeft="@dimen/dp_15">
+
+            <so.voc.vhome.widget.CircleImageView
+                android:id="@+id/civ_headIcon"
+                android:src="@drawable/ic_avatar"
+                android:layout_width="@dimen/dp_48"
+                android:layout_height="@dimen/dp_48" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/dp_15">
+
+                <TextView
+                    android:id="@+id/tv_userName"
+                    android:layout_gravity="left"
+                    style="@style/TitleText"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/ItemText"
+                        android:text="@string/phone_num"/>
+
+                    <TextView
+                        android:id="@+id/tv_phoneNum"
+                        style="@style/ItemText"
+                        android:layout_marginLeft="@dimen/dp_5"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView style="@style/Arrow_Right"/>
+
+        </LinearLayout>
+
+        <View style="@style/Line"/>
+
+        <View
+            style="@style/Line"
+            android:layout_height="@dimen/dp_10"
+            android:background="@color/colorBg"/>
+
+        <LinearLayout
+            style="@style/ActivityBG"
+            android:layout_marginTop="@dimen/dp_10"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingRight="@dimen/dp_15">>
+
+            <LinearLayout
+                style="@style/Item_52">
+                
+                <ImageView
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iv_push"/>
+
+                <TextView
+                    style="@style/TitleText"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:text="@string/message_push"/>
+
+                <so.voc.vhome.widget.SwitchButton
+                    android:id="@+id/sb_messagePush"
+                    android:layout_width="@dimen/dp_52"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="@dimen/dp_28" />
+
+            </LinearLayout>
+
+            <View style="@style/Line"/>
+
+            <LinearLayout
+                android:id="@+id/ll_modifyPwd"
+                android:onClick="userClick"
+                style="@style/Item_52">
+
+
+                <ImageView
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iv_lock_name"/>
+
+                <TextView
+                    style="@style/TitleText"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:text="@string/modify_pwd"/>
+
+                <ImageView style="@style/Arrow_Right"/>
+
+            </LinearLayout>
+
+            <View style="@style/Line"/>
+
+            <LinearLayout
+                android:id="@+id/ll_contactService"
+                android:onClick="userClick"
+                style="@style/Item_52">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iv_call"/>
+
+                <TextView
+                    style="@style/TitleText"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="@string/contact_service"/>
+
+                <ImageView style="@style/Arrow_Right"/>
+
+            </LinearLayout>
+
+            <View style="@style/Line"/>
+
+            <LinearLayout
+                android:id="@+id/ll_guideUse"
+                android:onClick="userClick"
+                style="@style/Item_52">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iv_guide_use"/>
+
+                <TextView
+                    style="@style/TitleText"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:gravity="left"
+                    android:text="@string/guide_use"/>
+
+                <ImageView style="@style/Arrow_Right"/>
+
+            </LinearLayout>
+
+            <View style="@style/Line"/>
+
+            <LinearLayout
+                android:id="@+id/ll_aboutUs"
+                android:onClick="userClick"
+                style="@style/Item_52">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iv_about_us"/>
+
+                <TextView
+                    style="@style/TitleText"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:gravity="left"
+                    android:text="@string/about_us"/>
+
+                <ImageView style="@style/Arrow_Right"/>
+
+            </LinearLayout>
+
+            <View style="@style/Line"/>
+
+            <Button
+                android:id="@+id/btn_logout"
+                style="@style/Button"
+                android:onClick="userClick"
+                android:background="@drawable/btn_red_bg"
+                android:text="@string/logout"
+                android:textColor="@color/colorRed"
+                android:layout_marginTop="@dimen/dp_100"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

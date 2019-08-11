@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        style="@style/ActivityBG">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/dp_14"
+                android:layout_marginEnd="@dimen/dp_14">
+                
+                <ImageView
+                    android:layout_width="@dimen/dp_170"
+                    android:layout_height="@dimen/dp_70"
+                    android:layout_marginTop="@dimen/dp_100"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/iv_logo"/>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="11"
+                    android:layout_marginTop="@dimen/dp_10"
+                    app:counterOverflowTextAppearance="@style/HintError">
+
+                    <so.voc.vhome.widget.XEditText
+                        android:id="@+id/et_phone"
+                        style="@style/Login"
+                        android:background="@drawable/line_bg"
+                        android:hint="@string/input_phone"
+                        android:inputType="number"
+                        android:maxLength="11"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_14">
+
+                    <so.voc.vhome.widget.XEditText
+                        android:id="@+id/et_pwd"
+                        style="@style/Login"
+                        android:hint="@string/input_pwd"
+                        android:background="@drawable/line_bg"
+                        android:inputType="textPassword" />
+
+                </android.support.design.widget.TextInputLayout>
+                
+                <Button
+                    android:id="@+id/btn_login"
+                    style="@style/Button"
+                    android:onClick="loginClick"
+                    android:layout_marginTop="@dimen/dp_26"
+                    android:text="@string/login"
+                    android:background="@drawable/btn_selector"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_26"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_register"
+                        style="@style/ItemText"
+                        android:text="@string/register"
+                        android:onClick="loginClick"/>
+
+                    <View
+                        android:layout_height="@dimen/dp_12"
+                        android:layout_width="@dimen/dp_1"
+                        android:layout_marginLeft="@dimen/dp_14"
+                        android:background="@color/colorLine"/>
+
+                    <TextView
+                        android:id="@+id/tv_forgerPwd"
+                        style="@style/ItemText"
+                        android:text="@string/forget_pwd"
+                        android:layout_marginLeft="@dimen/dp_14"
+                        android:onClick="loginClick"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_12"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="@dimen/dp_48"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="@color/colorLine"/>
+
+                <TextView
+                    style="@style/ItemText"
+                    android:text="@string/login_other"
+                    android:layout_marginLeft="@dimen/dp_12"/>
+
+                <View
+                    android:layout_width="@dimen/dp_48"
+                    android:layout_height="@dimen/dp_1"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:background="@color/colorLine"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_wechat"
+                android:layout_width="@dimen/dp_48"
+                android:layout_height="@dimen/dp_48"
+                android:onClick="loginClick"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/ic_wechat"
+                android:layout_gravity="center_horizontal"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

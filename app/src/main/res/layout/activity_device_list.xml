@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="hasDevice"
+            type="boolean"/>
+
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout style="@style/ActivityBG">
+
+        <View style="@style/Line_10" />
+
+        <RelativeLayout
+            style="@style/ActivityBG"
+            android:layout_marginTop="@dimen/dp_10"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingRight="@dimen/dp_15">
+
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/srl_device"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="@{hasDevice ? View.VISIBLE : View.GONE}">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_device"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_15" />
+
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_noDevice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:visibility="@{hasDevice ? View.GONE : View.VISIBLE}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_275"
+                    android:layout_height="@dimen/dp_128"
+                    android:background="@mipmap/no_device" />
+
+                <TextView
+                    style="@style/ItemText"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:text="@string/no_device" />
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_addDevice"
+                style="@style/Button"
+                android:onClick="addDeviceClick"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/dp_30"
+                android:background="@drawable/btn_selector"
+                android:text="@string/add_device" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>
